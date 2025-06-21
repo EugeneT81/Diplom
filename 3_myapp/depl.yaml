@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myapplication
+  name: myapplication
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapplication
+  template:
+    metadata:
+      labels:
+        app: myapplication
+    spec:
+      containers:
+        - image: eugene513/myapplication:1.0.0
+          imagePullPolicy: IfNotPresent
+          name: myapplication
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp
+spec:
+  ports:
+    - name: myapp-port
+      port: 80
+      targetPort: 80
+      nodePort: 30080
+  selector:
+    app: myapplication
+  type: NodePort
