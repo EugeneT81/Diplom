@@ -107,6 +107,13 @@ kubectl apply -f manifests/
 ![alt text](screen/ns_monitoring.png)
 
 
+Выполним Port-Forward:
+eugene@eugenek8s-client:~$ kubectl port-forward -n monitoring pods/grafana-6b44f6f87c-t2mf5 3000:3000
+Forwarding from 127.0.0.1:3000 -> 3000
+Forwarding from [::1]:3000 -> 3000
+
+
+![alt text](screen/grafana.png)
 
 -----------------------------------------------------------------------------
 V. Установка и настройка CI/CD
