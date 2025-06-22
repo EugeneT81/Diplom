@@ -118,4 +118,42 @@ Forwarding from [::1]:3000 -> 3000
 -----------------------------------------------------------------------------
 V. Установка и настройка CI/CD
 
+Директория cicd
+
+Для CICD использовался GitHub Actions в отдельном репозитории:
+https://github.com/EugeneT81/cicd
+
+Необходимо настроить переменные и secrets в Actions.
+
+Для автоматической сборки приложения в Docker-образ и публикации его в Docker Registry был написан GitHub Action Workflow [my_build.yml](cicd/.github/workflows/my_build.yml)
+
+
+![alt text](screen/push.png)
+
+![alt text](screen/github_build.png)
+
+![alt text](screen/docker_build.png)
+
+
+Для деплоя тестового приложения написан манифест [my_depl.yml](cicd/.github/workflows/my_depl.yml)
+
+
+![alt text](screen/tag.png)
+
+![alt text](screen/github_deploy.png)
+
+![alt text](screen/docker_deploy.png)
+
+
+После деплоя приложения можем перейти по адресу кластера http://<ip_address>:30080 и убедиться, что приложение работает.
+
+
+![alt text](screen/site.png)
+
+
+![alt text](screen/kubectl_pod_svc.png)
+
+
+![alt text](screen/pod_monitoring.png)
+
 
