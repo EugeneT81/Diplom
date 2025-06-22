@@ -11,6 +11,7 @@ https://yandex.cloud/ru/docs/iam/quickstart-sa
 ![S3backet](screen/S3.png)
 
 terraform init
+
 terraform apply
 
 
@@ -37,10 +38,12 @@ yc iam key create --service-account-id ajes5sin2ube284855h7 --folder-name defaul
 Добавим в переменные окружения идентификатор ключа и секретный ключ:
 
 export ACCESS_KEY="..."
+
 export SECRET_KEY="..."
 
 
 В папке с конфигурационным файлом выполним команды:
+
 terraform init -backend-config="access_key=$ACCESS_KEY" -backend-config="secret_key=$SECRET_KEY"
 
 3. Создадим VPC с подсетями в разных зонах доступности.
