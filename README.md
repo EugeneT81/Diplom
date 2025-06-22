@@ -68,7 +68,7 @@ yc managed-kubernetes cluster get-credentials yc-cluster --external --force
 
 ![nodes_pods](screen/nodes_pods.png)
 
-![alt text](screen/yc_master.png)
+![alt text](screen/yc_master1.png)
 
 ![alt text](screen/yc_workers.png)
 
