@@ -68,9 +68,7 @@ yc managed-kubernetes cluster get-credentials yc-cluster --external --force
 
 ![nodes_pods](screen/nodes_pods.png)
 
-
 ![alt text](screen/yc_master.png)
-
 
 ![alt text](screen/yc_workers.png)
 
@@ -97,9 +95,7 @@ IV. Подготовка cистемы мониторинга и деплой п
 
 git clone git@github.com:prometheus-operator/kube-prometheus.git
 
-# Create the namespace and CRDs, and then wait for them to be available before creating the remaining resources
-# Note that due to some CRD size we are using kubectl server-side apply feature which is generally available since kubernetes 1.22.
-# If you are using previous kubernetes versions this feature may not be available and you would need to use kubectl create instead.
+
 kubectl apply --server-side -f manifests/setup
 kubectl wait \
     --for condition=Established \
