@@ -74,6 +74,8 @@ yc managed-kubernetes cluster get-credentials yc-cluster --external --force
 
 ![alt text](screen/yc_workers.png)
 
+![alt text](screen/yc_backend.png)
+
 -----------------------------------------------------------------------------
 
 III. Создание тестового приложения
