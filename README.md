@@ -24,15 +24,13 @@ terraform apply
 ![backend](screen/backend.png)
 
 
-2. Согласно документации яндекс:
+2. Согласно документации YC:
 
 https://yandex.cloud/ru/docs/tutorials/infrastructure-management/terraform-state-storage?ysclid=mc7q0g9zbh595529103
 
 Создадим авторизованный ключ для сервисного аккаунта и запись его файл:
-yc iam key create \
-  --service-account-id ajes5sin2ube284855h7 \
-  --folder-name default-katalog \
-  --output mykey.json
+
+yc iam key create --service-account-id ajes5sin2ube284855h7 --folder-name default-katalog --output mykey.json
 
 
   
@@ -49,20 +47,20 @@ terraform init -backend-config="access_key=$ACCESS_KEY" -backend-config="secret_
 
 [VPC](terraform_backend/network.tf)
 
-4. С помощью сервиса сервисом Yandex Managed Service for Kubernetes создадим кластер k8s.
+4. С помощью сервиса Yandex Managed Service for Kubernetes создадим кластер k8s.
 
 [Master_node](terraform_backend/master.tf)
 
 [Worker_nodes](terraform_backend/workers.tf)
 
 
+Применим манифесты:
+
 terraform apply
 
 Чтобы получить доступ к кластеру воспользуемся утилитой yc:
 
-yc managed-kubernetes cluster \
-   get-credentials yc-cluster \
-   --external --force
+yc managed-kubernetes cluster get-credentials yc-cluster --external --force
 
 
 ![nodes_pods](screen/nodes_pods.png)
