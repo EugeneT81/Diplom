@@ -10,6 +10,10 @@ https://yandex.cloud/ru/docs/iam/quickstart-sa
 
 ![S3backet](screen/S3.png)
 
+terraform init
+terraform apply
+
+
 -----------------------------------------------------------------------------
 Создание Kubernetes кластера
 
@@ -32,7 +36,6 @@ yc iam key create \
 
 
   
-  
 Добавим в переменные окружения идентификатор ключа и секретный ключ:
 
 export ACCESS_KEY="..."
@@ -53,6 +56,7 @@ terraform init -backend-config="access_key=$ACCESS_KEY" -backend-config="secret_
 [Worker_nodes](terraform_backend/workers.tf)
 
 
+terraform apply
 
 Чтобы получить доступ к кластеру воспользуемся утилитой yc:
 
@@ -60,6 +64,8 @@ yc managed-kubernetes cluster \
    get-credentials yc-cluster \
    --external --force
 
+
+![nodes_pods](screen/nodes_pods.png)
 -----------------------------------------------------------------------------
 Создание тестового приложения
 
