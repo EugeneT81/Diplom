@@ -109,6 +109,8 @@ kubectl apply -f manifests/
 
 Выполним Port-Forward:
 eugene@eugenek8s-client:~$ kubectl port-forward -n monitoring pods/grafana-6b44f6f87c-t2mf5 3000:3000
+
+
 Forwarding from 127.0.0.1:3000 -> 3000
 Forwarding from [::1]:3000 -> 3000
 
@@ -145,7 +147,7 @@ https://github.com/EugeneT81/cicd
 ![alt text](screen/docker_deploy.png)
 
 
-После деплоя приложения можем перейти по адресу кластера http://<ip_address>:30080 и убедиться, что приложение работает.
+После деплоя приложения можем перейти по адресу http://<node_ip>:30080 и убедиться, что приложение работает.
 
 
 ![alt text](screen/site.png)
