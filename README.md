@@ -150,9 +150,12 @@ https://github.com/EugeneT81/cicd
 
 ![alt text](screen/site.png)
 
+Вывод kubectl get pods и kubectl get svc:
 
 ![alt text](screen/kubectl_pod_svc.png)
 
+
+Развернутое приложение мониторится:
 
 ![alt text](screen/pod_monitoring.png)
 
